@@ -1,0 +1,14 @@
+/* src/components/layout/Footer/Footer.module.css */
+.footer {
+  background-color: var(--color-dark-surface);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+  margin-top: var(--spacing-xxl); /* Push footer down */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}

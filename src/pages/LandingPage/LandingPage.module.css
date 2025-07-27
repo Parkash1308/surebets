@@ -1,0 +1,489 @@
+.landingPage {
+  background-color: var(--color-dark-background);
+  color: var(--color-text-light);
+  min-height: calc(100vh - var(--header-height)); /* Ensure it fills screen below header */
+  padding-bottom: var(--spacing-xxxl); /* Space for footer */
+}
+
+/* Hero Section */
+.heroSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.heroContent {
+  flex: 1; /* Allows content to grow */
+  min-width: 300px; /* Prevents shrinking too much */
+  text-align: left;
+}
+
+.trustIndicator {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  margin-bottom: var(--spacing-sm);
+}
+
+.trustIcon {
+  color: var(--color-blue-accent);
+}
+
+.heroTitle {
+  font-size: var(--font-size-hero-title);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+}
+
+.heroTitle .highlight {
+  color: var(--color-blue-accent);
+}
+
+.heroSubtitle {
+  font-size: var(--font-size-md);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.ctaForm {
+  display: flex;
+  flex-wrap: wrap; /* Allow form elements to wrap */
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow input to take available space */
+  min-width: 200px; /* Minimum width for input */
+}
+
+.emailInput {
+  flex-grow: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  padding-left: var(--spacing-xl); /* Make space for icon */
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-dark-surface);
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.emailInput:focus {
+  border-color: var(--color-blue-accent);
+}
+
+.inputIcon {
+  position: absolute;
+  left: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.heroImageContainer {
+  flex: 1; /* Allows container to grow */
+  min-width: 300px; /* Prevents container from shrinking too much */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* No direct image here, but the container ensures its content is centered */
+}
+
+/* --- PROFIT MODULE STYLES --- */
+.profitModule {
+    position: relative; /* For potential background image/blur */
+    background-color: rgba(38, 38, 63, 0.6); /* Semi-transparent dark surface */
+    backdrop-filter: blur(8px); /* Blur effect as seen in image */
+    border: 1px solid rgba(68, 68, 102, 0.4); /* Softer border */
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    color: var(--color-text-light);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Stronger shadow */
+    width: 100%; /* Ensure it takes full width of its container */
+    max-width: 350px; /* Limit its max width */
+    overflow: hidden; /* Important for blur to work within bounds */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px; /* Give it a minimum height */
+    box-sizing: border-box; /* Include padding/border in width/height */
+}
+
+.profitModule h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-light);
+    line-height: 1.3;
+}
+
+.lockIcon {
+    font-size: var(--font-size-xxl); /* Larger icon */
+    margin-bottom: var(--spacing-md); /* More space below icon */
+    display: block;
+    color: rgba(255, 255, 255, 0.7); /* Slightly transparent white for the lock */
+}
+
+.profitModule .button { /* Style the button within the profit module */
+    margin-top: var(--spacing-sm); /* Space above the button */
+    padding: var(--spacing-sm) var(--spacing-xl); /* Larger padding for button */
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-blue-accent);
+    color: var(--color-text-light);
+}
+
+.profitModule .button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* --- END PROFIT MODULE STYLES --- */
+
+
+/* Tools Showcase Section */
+.toolsShowcaseSection {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.leftSidebar {
+  background-color: var(--color-dark-surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+  min-width: 250px;
+  max-width: 300px;
+  flex: 1 1 250px; /* Adjusted flex basis for 2-column layout */
+}
+
+.sidebarHeader {
+  display: flex;
+  flex-direction: column; /* Stack logo and tabs */
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sidebarLogo {
+  height: 25px; /* Adjust size for sidebar logo */
+  margin-bottom: var(--spacing-sm);
+}
+
+.sidebarTabs {
+  display: flex;
+  gap: var(--spacing-xs);
+  width: 100%;
+  justify-content: center;
+}
+
+.sidebarTab {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebarTab.active {
+  background-color: var(--color-blue-accent);
+  color: var(--color-text-light);
+  border-color: var(--color-blue-accent);
+}
+
+.sidebarTab:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-blue-accent);
+}
+
+.sidebarNav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebarNavItem {
+  margin-bottom: var(--spacing-xs);
+}
+
+.sidebarNavLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--color-text-light);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebarNavLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-blue-accent);
+}
+
+.sidebarIcon {
+  color: var(--color-text-secondary);
+}
+
+.sidebarNavLink:hover .sidebarIcon {
+    color: var(--color-blue-accent);
+}
+
+.sidebarNavLink .percentage {
+  margin-left: auto; /* Push percentage to the right */
+  background-color: var(--color-green-success);
+  color: var(--color-text-light);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+
+.mainContentArea {
+  flex: 3 1 600px; /* Adjusted flex basis to take more space, min-width 600px */
+  min-width: 400px; /* Minimum width for table */
+  background-color: var(--color-dark-surface);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-md);
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.tableHeader h2 {
+  font-size: var(--font-size-xl);
+  color: var(--color-text-light);
+}
+
+.tableFilters {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.filterButton {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+}
+
+.filterButton.active {
+  background-color: var(--color-blue-accent);
+  color: var(--color-text-light);
+  border-color: var(--color-blue-accent);
+}
+
+.filterButton:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-blue-accent);
+}
+
+.lockIconSmall {
+    font-size: var(--font-size-sm);
+}
+
+.tableContainer {
+  overflow-x: auto; /* Allows horizontal scrolling for large tables */
+}
+
+.dataTablet {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dataTablet th, .dataTablet td {
+  padding: var(--spacing-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap; /* Prevent content from wrapping in cells */
+}
+
+.dataTablet th {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.dataTablet td {
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
+}
+
+.dataTablet tbody tr:last-child td {
+  border-bottom: none; /* No border for the last row */
+}
+
+.betBooks {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Small gap between book entries */
+    font-size: var(--font-size-sm);
+}
+
+.betBooks span {
+    color: var(--color-text-secondary); /* Softer color for sportsbook names */
+}
+
+/* phoneMockupContainer is kept in JSX, but its styles are removed here as it's empty */
+.phoneMockupContainer {
+  /* This container will now collapse if empty, or take space if content is added */
+  /* You can add padding/margin here if you want empty space */
+  /* For instance, if it's meant to be a flexible empty column: */
+  flex: 1 1 0; /* flex-grow, flex-shrink, flex-basis 0 */
+  min-width: 0; /* Allow it to shrink completely if empty */
+}
+
+
+/* Features Section */
+.featuresSection {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--color-text-light);
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  flex: 1 1 200px; /* Allow items to wrap, minimum width 200px */
+  justify-content: center; /* Center content within item */
+  text-align: center;
+}
+
+.featureIcon {
+  color: var(--color-green-success); /* Green checkmark */
+  font-size: var(--font-size-lg);
+}
+
+
+/* Responsive adjustments for LandingPage */
+@media (max-width: 992px) {
+  .heroSection, .toolsShowcaseSection {
+    flex-direction: column; /* Stack sections */
+    text-align: center;
+  }
+
+  .heroContent, .heroImageContainer,
+  .leftSidebar, .mainContentArea,
+  .phoneMockupContainer { /* Now also included in stacking for consistency */
+    width: 100%; /* Take full width */
+    max-width: unset; /* Remove max-width constraints */
+    margin-bottom: var(--spacing-lg); /* Space between stacked items */
+  }
+
+  .ctaForm {
+    justify-content: center; /* Center form elements when stacked */
+  }
+
+  .inputWrapper, .stateSelectorWrapper {
+    width: 100%; /* Make input and state selector full width */
+    min-width: unset;
+  }
+
+  .emailInput {
+    width: 100%;
+  }
+
+  .ctaForm button {
+    width: 100%; /* Make button full width */
+  }
+
+  .leftSidebar {
+    max-width: 100%; /* Remove max-width on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--font-size-xxxl); /* Smaller on tablets */
+  }
+
+  .featuresSection {
+    flex-direction: column; /* Stack features vertically */
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .featureItem {
+    justify-content: flex-start; /* Align features to start when stacked */
+    width: 80%; /* Give it some width */
+    margin: 0 auto; /* Center it */
+  }
+
+  .dataTablet th, .dataTablet td {
+    padding: var(--spacing-sm) var(--spacing-xs); /* Smaller padding for table cells */
+    font-size: var(--font-size-sm);
+  }
+
+  .betBooks {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: var(--font-size-xxl); /* Even smaller on mobile */
+  }
+
+  .heroSubtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .ctaForm {
+    flex-direction: column; /* Stack form elements */
+    align-items: stretch; /* Stretch to fill width */
+  }
+
+  .inputWrapper {
+    width: 100%;
+  }
+
+  .tableHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tableFilters {
+    flex-wrap: wrap; /* Allow filter buttons to wrap */
+  }
+}

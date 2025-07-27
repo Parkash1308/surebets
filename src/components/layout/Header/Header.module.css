@@ -1,0 +1,316 @@
+/* src/components/layout/Header/Header.module.css */
+.header {
+  background-color: var(--color-dark-surface);
+  padding: var(--spacing-sm) 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.headerContainer { /* Applied to the inner 'container' div within Header.jsx */
+  max-width: 1400px; /* Wider container for the entire header content */
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg); /* More padding on sides */
+  width: 100%;
+  display: flex; /* Key change: Make the main container a flexbox */
+  justify-content: space-between; /* Pushes left and right sections apart */
+  align-items: center; /* Vertically centers content within the header */
+}
+
+.leftSection {
+  display: flex;
+  align-items: center; /* Keep vertical alignment */
+  gap: var(--spacing-xl); /* Space between logo and nav */
+}
+
+.rightSection {
+  display: flex;
+  align-items: center; /* Ensures vertical alignment */
+  gap: var(--spacing-md); /* Consistent spacing between elements in right section */
+}
+
+/* Consolidated and updated .logo img styles */
+.logo img {
+  height: 28px; /* Slightly reduced to accommodate potential border/padding */
+  width: auto; /* Maintain aspect ratio initially */
+  max-width: 150px; /* Adjust this value as needed for a rectangular look */
+  object-fit: contain; /* Ensures the entire image is visible without distortion */
+  border-radius: var(--border-radius-sm); /* Rounded corners */
+  /* Optional: Add a background color if your logo is transparent and needs a solid base */
+  /* background-color: #your-logo-background-color; */
+  /* Optional: Add a subtle border */
+  /* border: 1px solid var(--color-border); */
+  /* Margin handled by gap on .leftSection, so no explicit margin-right here */
+}
+
+.nav {
+  /* No margin-right here, handled by gap on .leftSection */
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center; /* Explicitly align nav items vertically */
+  height: 100%; /* Ensure nav list aligns with other items */
+}
+
+.navItem {
+  position: relative;
+  display: flex; /* Make nav items flex to center button/link vertically */
+  align-items: center;
+  height: 100%;
+}
+
+.navLink, .navButton {
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xxs);
+  white-space: nowrap; /* Prevent wrapping for nav items */
+  height: 100%; /* Make them fill height for better click area */
+}
+
+.navLink:hover, .navButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-blue-accent);
+}
+
+.arrowIcon {
+  font-size: var(--font-size-sm);
+  margin-left: var(--spacing-xxs); /* Slight space for the arrow */
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 5px); /* Position below the nav item */
+  left: 0;
+  background-color: var(--color-dark-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+  min-width: 250px;
+  padding: var(--spacing-sm) 0;
+  z-index: 1001;
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.dropdown ul li {
+  /* No padding here, padding moved to the anchor tag */
+}
+
+.dropdown ul li a {
+  display: flex; /* For icon and text alignment */
+  align-items: center;
+  gap: var(--spacing-sm); /* Space between icon and text */
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+  padding: var(--spacing-xs) var(--spacing-md); /* Padding for the clickable area */
+}
+
+.dropdown ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.dropdownIcon {
+    font-size: var(--font-size-base); /* Size for dropdown icons */
+    color: var(--color-text-secondary); /* Default icon color */
+}
+
+.dropdown ul li a:hover .dropdownIcon {
+    color: var(--color-blue-accent); /* Change icon color on hover */
+}
+
+.dropdownSection {
+  flex: 1;
+  padding: 0 var(--spacing-md);
+}
+
+.dropdownSection h3 {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+  padding: var(--spacing-xs) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: var(--spacing-xs) var(--spacing-md);
+}
+
+/* Right section elements */
+.searchIconWrapper, .moneyIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Fixed width for clickable area */
+    height: 40px; /* Fixed height */
+    border-radius: var(--border-radius-circle); /* Make it circular */
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.searchIconWrapper:hover, .moneyIconWrapper:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.mainSearchIcon, .moneyIcon {
+    font-size: var(--font-size-lg); /* Larger icon size */
+    color: var(--color-text-secondary);
+}
+
+.stateSelectorWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* margin-right handled by gap on rightSection */
+}
+
+.stateSelectorTrigger {
+    background-color: var(--color-dark-background);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-border);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes text to left, arrow to right */
+    gap: var(--spacing-xxs);
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    min-width: 70px;
+    height: 40px; /* Match height of icons for vertical alignment */
+}
+
+.stateSelectorTrigger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-blue-accent);
+}
+
+/* Search Overlay Styles */
+.searchOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark overlay */
+    z-index: 2000; /* Higher than header */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    padding-top: var(--spacing-xxl);
+}
+
+.searchOverlayContent {
+    position: relative;
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px;
+    background-color: var(--color-dark-surface);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+}
+
+.overlaySearchInput {
+    flex-grow: 1;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-xs);
+    color: var(--color-text-light);
+}
+
+.closeSearchOverlay {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-xl);
+    cursor: pointer;
+    padding: var(--spacing-xs);
+    transition: color 0.2s ease-in-out;
+}
+
+.closeSearchOverlay:hover {
+    color: var(--color-blue-accent);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .leftSection {
+    gap: var(--spacing-lg); /* Slightly reduce gap on smaller desktop screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContainer {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center horizontally when stacked */
+    padding: var(--spacing-sm);
+    gap: var(--spacing-md); /* Add gap between stacked sections */
+  }
+
+  .leftSection, .rightSection {
+    width: 100%; /* Take full width when stacked */
+    justify-content: center; /* Center content within each section */
+    gap: var(--spacing-md); /* Maintain spacing within sections */
+  }
+
+  .nav {
+    margin-right: 0; /* Remove specific margins if stacking */
+  }
+
+  .navList {
+    flex-wrap: wrap; /* Allow nav items to wrap if screen is very narrow */
+    justify-content: center; /* Center wrapped nav items */
+  }
+
+  .navItem {
+    margin-bottom: var(--spacing-xs); /* Add some space between wrapped nav items */
+  }
+}
+
+@media (max-width: 480px) {
+  .leftSection, .rightSection {
+    flex-direction: column; /* Stack elements within sections on very small screens */
+    gap: var(--spacing-sm);
+  }
+
+  .navLink, .navButton {
+    padding: var(--spacing-xs); /* Reduce padding for smaller buttons */
+    font-size: var(--font-size-sm);
+  }
+
+  .rightSection .button {
+    width: 100%; /* Make buttons full width when stacked */
+  }
+}
