@@ -27,6 +27,45 @@
   --font-size-lg: 1.5rem;    /* 24px */
   --font-size-xl: 2rem;      /* 32px */
   --font-size-xxl: 3rem;     /* 48px */
+   /* New/Updated variables for this design */
+   --color-dark-surface: #1a1e27; /* Main header/dropdown background, also used for cards */
+   --color-dark-background: #11151c; /* Overall page background */
+   --color-blue-accent: #007bff; /* Primary action color, highlights */
+   --color-text-light: #ffffff; /* Main text color */
+   --color-text-secondary: #a0a0a0; /* Secondary text, icons, borders */
+   --color-border: #333; /* Border color for elements */
+   --color-green-success: #28a745; /* Example for success state or positive value */
+   --color-lime-accent: #a3e635; /* NEW: Lime green for profit section highlight */
+ 
+   /* Spacing */
+   --spacing-xxs: 4px;
+   --spacing-xs: 8px;
+   --spacing-sm: 12px;
+   --spacing-md: 16px;
+   --spacing-lg: 24px;
+   --spacing-xl: 32px;
+   --spacing-xxl: 48px;
+   --spacing-xxxl: 64px;
+ 
+   /* Font Sizes */
+   --font-size-sm: 0.875rem; /* 14px */
+   --font-size-base: 1rem; /* 16px */
+   --font-size-md: 1.125rem; /* 18px */
+   --font-size-lg: 1.25rem; /* 20px */
+   --font-size-xl: 1.5rem; /* 24px */
+   --font-size-xxl: 2rem; /* 32px */
+   --font-size-xxxl: 2.5rem; /* 40px */
+   --font-size-hero-title: 3.5rem; /* 56px */
+ 
+   /* Border Radii */
+   --border-radius-sm: 4px;
+   --border-radius-md: 8px;
+   --border-radius-lg: 12px;
+   --border-radius-xl: 16px; /* Added for more rounded cards */
+   --border-radius-circle: 50%;
+ 
+   /* Component Heights */
+   --header-height: 60px; /* Example header height */
 
-  --header-height: 60px; /* Example height */
+
 }

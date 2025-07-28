@@ -1,0 +1,44 @@
+/* src/pages/LandingPage/FeaturesSection.module.css */
+.featuresSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--color-dark-background); /* Ensure background is set */
+    color: var(--color-text-light); /* Ensure text color is set */
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text-light);
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    flex: 1 1 200px; /* Allow items to wrap, minimum width 200px */
+    justify-content: center; /* Center content within item */
+    text-align: center;
+  }
+  
+  .featureIcon {
+    color: var(--color-green-success); /* Green checkmark */
+    font-size: var(--font-size-lg);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .featuresSection {
+      flex-direction: column; /* Stack features vertically */
+      align-items: center;
+      gap: var(--spacing-md);
+    }
+  
+    .featureItem {
+      justify-content: flex-start; /* Align features to start when stacked */
+      width: 80%; /* Give it some width */
+      margin: 0 auto; /* Center it */
+    }
+  }

@@ -1,0 +1,207 @@
+/* src/components/sections/AboutUsSection/AboutUsSection.module.css */
+.aboutUsSection {
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    background-color: var(--color-dark-background); /* Use your primary dark background */
+    color: var(--color-text-light);
+    text-align: center; /* Center the main headings */
+  }
+  
+  .mainHeading {
+    font-size: var(--font-size-xxxl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+  }
+  
+  .subHeading {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-lime-accent); /* Highlight this sub-heading */
+    margin-bottom: var(--spacing-xxl); /* More space after initial headings */
+  }
+  
+  /* Container for the cards to enable grid/flex layout */
+  .cardsGridContainer {
+    display: grid; /* Use CSS Grid for responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Auto-fit columns, min 300px wide */
+    gap: var(--spacing-xl); /* Space between cards */
+    max-width: 1200px; /* Limit the overall width of the grid */
+    margin: 0 auto var(--spacing-xxl) auto; /* Center the grid and space below it */
+    align-items: stretch; /* Ensure cards in the same row have equal height */
+  }
+  
+  .contentCard {
+    background-color: var(--color-dark-surface); /* Card background */
+    border-radius: var(--border-radius-xl); /* Rounded corners */
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-xl); /* Generous padding inside cards */
+    text-align: left; /* Text content is left-aligned within cards */
+    display: flex; /* Use flexbox for content within the card */
+    flex-direction: column; /* Stack content vertically */
+    transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .contentCard:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    border-color: var(--color-blue-accent); /* Change border color on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .blockTitle {
+    font-size: var(--font-size-xxl); /* Keep title size */
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .blockDescription {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md); /* Space between paragraphs */
+  }
+  
+  .italicText {
+    font-style: italic;
+    font-weight: 600; /* Make it a bit bolder too */
+    color: var(--color-lime-accent); /* Optional: highlight this important sentence */
+  }
+  
+  .checkmarksList,
+  .featuresList,
+  .bulletList {
+    list-style: none; /* Remove default list styles */
+    padding: 0;
+    margin: var(--spacing-md) 0 var(--spacing-lg) 0;
+    flex-grow: 1; /* Allow lists to take up available space, pushing content to bottom if needed */
+  }
+  
+  .checkmarksList li,
+  .featuresList li,
+  .bulletList li {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.5;
+    display: flex; /* For aligning icons/emojis with text */
+    align-items: flex-start; /* Align text to top if multiple lines */
+    gap: var(--spacing-xxs); /* Space between icon/emoji and text */
+  }
+  
+  /* Specific styling for list item icons/emojis */
+  .checkmarkIcon,
+  .featureEmoji,
+  .bulletIcon {
+    font-size: 1.2rem; /* Slightly larger than text for visibility */
+    color: var(--color-blue-accent); /* Accent color for icons/emojis */
+    flex-shrink: 0; /* Prevent icons/emojis from shrinking */
+    margin-top: 2px; /* Small adjustment for vertical alignment */
+  }
+  
+  
+  .featureHighlight {
+    font-weight: 600;
+    color: var(--color-text-light); /* Make feature names stand out */
+  }
+  
+  /* Call to Action */
+  .callToAction {
+    margin-top: var(--spacing-xxl);
+    padding-top: var(--spacing-xxl);
+    border-top: 1px solid var(--color-border); /* Separator line */
+    text-align: center;
+  }
+  
+  .ctaText {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg); /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .mainHeading {
+      font-size: var(--font-size-xxl);
+    }
+    .subHeading {
+      font-size: var(--font-size-lg);
+    }
+    .blockTitle {
+      font-size: var(--font-size-xl);
+    }
+    .blockDescription,
+    .checkmarksList li,
+    .featuresList li,
+    .bulletList li {
+      font-size: var(--font-size-base);
+    }
+    .ctaText {
+      font-size: var(--font-size-lg);
+    }
+    .contentCard {
+      padding: var(--spacing-xl); /* Reduce padding on tablets */
+    }
+    .cardsGridContainer {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Still 2-3 columns if space allows */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mainHeading {
+      font-size: var(--font-size-xl);
+    }
+    .subHeading {
+      font-size: var(--font-size-base);
+    }
+    .blockTitle {
+      font-size: var(--font-size-lg);
+    }
+    .aboutUsSection {
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+    .contentCard {
+      padding: var(--spacing-lg); /* Further reduce padding on mobile */
+    }
+    .cardsGridContainer {
+      grid-template-columns: 1fr; /* Single column on smaller screens */
+      gap: var(--spacing-xl); /* Consistent gap when stacked */
+    }
+    .ctaButtons {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: var(--spacing-md);
+      max-width: 300px; /* Constrain button width */
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .mainHeading {
+      font-size: var(--font-size-lg);
+    }
+    .blockTitle {
+      font-size: var(--font-size-base);
+    }
+    .blockDescription,
+    .checkmarksList li,
+    .featuresList li,
+    .bulletList li {
+      font-size: var(--font-size-sm);
+    }
+    .ctaText {
+      font-size: var(--font-size-base);
+    }
+    .contentCard {
+      padding: var(--spacing-md); /* Smallest padding on small phones */
+      border-radius: var(--border-radius-lg); /* Slightly less rounded on small screens */
+    }
+  }

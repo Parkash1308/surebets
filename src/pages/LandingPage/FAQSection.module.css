@@ -1,0 +1,219 @@
+/* src/components/sections/FAQSection/FAQSection.module.css */
+.faqSection {
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    background-color: var(--color-dark-background); /* Consistent dark background */
+    color: var(--color-text-light);
+  }
+  
+  .contentWrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    gap: var(--spacing-xxl); /* Space between columns */
+    max-width: 1200px; /* Limit overall width of content */
+    margin: 0 auto; /* Center the content */
+    align-items: flex-start; /* Align columns at the top */
+  }
+  
+  /* Left Column: Support Options */
+  .supportColumn {
+    flex: 1; /* Allow to grow */
+    min-width: 300px; /* Minimum width for the column */
+    padding-right: var(--spacing-xl); /* Space from the FAQ column */
+    text-align: left; /* Align text within this column to the left */
+  }
+  
+  .supportIconLargeWrapper {
+    width: 60px; /* Fixed size for the background circle */
+    height: 60px;
+    background-color: rgba(56, 189, 248, 0.2); /* Light blue with transparency */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    margin-left: 0; /* Align to left */
+  }
+  
+  .supportIconLarge {
+    font-size: 2rem; /* Size of the icon inside the circle */
+    color: var(--color-blue-accent); /* Blue accent color */
+  }
+  
+  .supportHeading {
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.3;
+  }
+  
+  .supportOptions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .supportOptionItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text-light); /* Ensure text is visible */
+    text-decoration: none; /* Remove underline for links */
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .supportOptionItem:hover {
+    color: var(--color-lime-accent); /* Highlight on hover */
+  }
+  
+  .supportOptionIcon {
+    font-size: 1.5rem; /* Icon size for support options */
+    color: var(--color-blue-accent); /* Blue accent for icons */
+  }
+  
+  .supportOptionText {
+    margin: 0; /* Remove default paragraph margin */
+  }
+  
+  /* Right Column: FAQ List */
+  .faqColumn {
+    flex: 2; /* FAQ column takes more space */
+    min-width: 400px; /* Minimum width for the FAQ column */
+  }
+  
+  .faqMainTitle {
+    font-size: var(--font-size-xxl); /* Title for the FAQ column itself */
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xl);
+    text-align: left; /* Ensure it's left-aligned */
+  }
+  
+  .faqItem {
+    background-color: var(--color-dark-surface); /* Dark surface for each FAQ item */
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-sm); /* Space between FAQ items */
+    overflow: hidden; /* Hide overflow when answer is closed */
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .faqItem:hover {
+    border-color: var(--color-lime-accent); /* Highlight border on hover */
+  }
+  
+  .faqQuestion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .faqQuestion:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Slight hover effect */
+  }
+  
+  .faqToggleIcon {
+    font-size: 1rem;
+    transition: transform 0.3s ease-in-out;
+    margin-left: var(--spacing-sm); /* Space between text and icon */
+  }
+  
+  .faqToggleIcon.open {
+    transform: rotate(180deg); /* Rotate icon when FAQ is open */
+  }
+  
+  .faqAnswer {
+    padding: 0 var(--spacing-lg) var(--spacing-md); /* Adjust padding for answer */
+    background-color: rgba(255, 255, 255, 0.03); /* Slightly lighter background for answer */
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+  }
+  
+  .faqAnswer p {
+    margin: 0; /* Remove default paragraph margin within answer */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    .contentWrapper {
+      flex-direction: column; /* Stack columns vertically */
+      gap: var(--spacing-xl);
+      text-align: center; /* Center content when stacked */
+    }
+    .supportColumn,
+    .faqColumn {
+      min-width: unset; /* Remove min-width when stacked */
+      padding-right: 0; /* Remove padding */
+      width: 100%; /* Take full width */
+    }
+    .supportIconLargeWrapper {
+      margin: 0 auto var(--spacing-xl) auto; /* Center the large icon */
+    }
+    .supportOptions {
+      flex-direction: row; /* Make support options row-wise */
+      justify-content: center; /* Center support options */
+      flex-wrap: wrap; /* Allow wrapping */
+    }
+    .supportOptionItem {
+      flex-direction: column; /* Stack icon and text within item */
+      gap: var(--spacing-xs);
+      font-size: var(--font-size-base); /* Smaller font for stacked items */
+    }
+    .supportOptionIcon {
+      font-size: 1.8rem; /* Adjust icon size */
+    }
+    .faqQuestion {
+      font-size: var(--font-size-base); /* Smaller font for questions */
+    }
+    .faqAnswer {
+      font-size: var(--font-size-sm); /* Smaller font for answers */
+    }
+    .faqMainTitle {
+      text-align: center; /* Center FAQ title when columns stack */
+      margin-top: var(--spacing-lg); /* Add some space above the title */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .supportHeading, .faqMainTitle {
+      font-size: var(--font-size-xl);
+    }
+    .faqSection {
+      padding: var(--spacing-xl) var(--spacing-md);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .supportHeading, .faqMainTitle {
+      font-size: var(--font-size-lg);
+    }
+    .supportOptions {
+      flex-direction: column; /* Stack support options vertically again */
+      align-items: flex-start; /* Align text to left */
+      margin: 0 auto;
+    }
+    .supportOptionItem {
+      flex-direction: row; /* Back to row for icon and text */
+      justify-content: flex-start;
+    }
+    .faqQuestion {
+      padding: var(--spacing-sm) var(--spacing-md);
+      font-size: var(--font-size-sm);
+    }
+    .faqAnswer {
+      padding: 0 var(--spacing-md) var(--spacing-sm);
+    }
+  }

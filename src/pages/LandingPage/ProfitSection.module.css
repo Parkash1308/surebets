@@ -1,0 +1,209 @@
+/* src/components/sections/ProfitSection/ProfitSection.module.css */
+.profitSection {
+    padding: 6rem 2rem;
+    background-color: #0c0c0c;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  .textContainer {
+    max-width: 1000px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+  
+  .mainHeading {
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  
+  .highlight {
+    color: #f5ff59; /* Bright lime green accent */
+  }
+  
+  .subHeading {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+  }
+  
+  .pikkitHighlight {
+    font-weight: bold;
+    color: #38bdf8; /* Light blue accent */
+  }
+  
+  /* Carousel */
+  .carouselContainer {
+    overflow: hidden;
+    /* Add padding to ensure cards are visible when scrolling starts/ends */
+    padding: 1rem 0;
+  }
+  
+  .carouselTrack {
+    display: flex;
+    white-space: nowrap;
+    animation: scrollLeft 50s linear infinite;
+  }
+  
+  .carouselTrack:hover {
+    animation-play-state: paused;
+  }
+  
+  .card {
+    flex: 0 0 auto;
+    background: #1a1a1a;
+    border: 1px solid #2f2f2f;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin: 0 1rem;
+    width: 300px; /* Base width for cards */
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    /* Added min-height to ensure consistent card size visually, adjust as needed */
+    min-height: 400px; /* Example min-height, adjust based on content */
+    display: flex; /* Use flexbox for internal card layout */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Push image to bottom if content is short */
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: #f5ff59;
+  }
+  
+  .cardHeader {
+    display: flex;
+    /* Changed to flex-start to prevent text from pushing the profit to edge */
+    justify-content: flex-start;
+    align-items: center; /* Align items vertically in the center */
+    margin-bottom: 1rem;
+    gap: 1rem; /* Space between user info and profit */
+    flex-wrap: wrap; /* Allow wrapping on smaller card sizes */
+  }
+  
+  .cardName {
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: normal; /* Allow name to wrap */
+  }
+  
+  .cardState {
+    font-size: 0.9rem;
+    color: #999;
+    white-space: normal; /* Allow state to wrap */
+  }
+  
+  .cardProfit {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4ade80; /* Green for profit */
+    /* Remove text-align: right; from here as flexbox handles alignment */
+    margin-left: auto; /* Push profit to the right within the flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align profit and duration to the right within its own column */
+    white-space: nowrap; /* Keep profit on one line if possible */
+  }
+  
+  .cardDuration {
+    display: block;
+    font-size: 0.85rem;
+    color: #999;
+    white-space: nowrap; /* Keep duration on one line */
+  }
+  
+  .cardTestimonial {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    /* Added specific properties to handle overflowing text */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limit to 4 lines, adjust as needed */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis for overflow */
+    white-space: normal; /* Allow text to wrap naturally */
+    flex-grow: 1; /* Allow testimonial to take available space */
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: auto; /* Ensure aspect ratio is maintained */
+    border-radius: 0.75rem;
+    border: 1px solid #333;
+    margin-top: auto; /* Push image to the bottom */
+    display: block; /* Remove extra space below image */
+  }
+  
+  /* Animation */
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Responsive */
+  @media (min-width: 640px) {
+    .card {
+      width: 320px;
+    }
+    .mainHeading {
+      font-size: 3rem; /* Adjusted based on previous instructions */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .mainHeading {
+      font-size: 3.5rem; /* Further adjustment for larger tablets */
+    }
+    .subHeading {
+      font-size: 1.3rem; /* Slightly larger sub-heading */
+    }
+    .card {
+      width: 340px; /* Slightly wider cards */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .mainHeading {
+      font-size: 4rem;
+    }
+  
+    .subHeading {
+      font-size: 1.4rem;
+    }
+  
+    .card {
+      width: 360px;
+    }
+  }
+  
+  /* Extra small screens adjustments */
+  @media (max-width: 480px) {
+    .mainHeading {
+      font-size: 2rem;
+    }
+    .subHeading {
+      font-size: 1rem;
+    }
+    .card {
+      width: 280px; /* Smaller cards for mobile */
+      margin: 0 0.5rem; /* Less margin */
+      padding: 1rem; /* Less padding */
+    }
+    .cardHeader {
+      flex-direction: column; /* Stack name/state and profit vertically */
+      align-items: flex-start; /* Align stacked items to the left */
+      gap: 0.5rem;
+    }
+    .cardProfit {
+      margin-left: 0; /* Remove auto margin when stacked */
+      align-self: flex-end; /* Push profit to the right within the stacked header */
+    }
+    .cardName, .cardState, .cardTestimonial {
+      white-space: normal; /* Ensure text wraps */
+    }
+  }

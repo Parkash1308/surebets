@@ -1,0 +1,272 @@
+/* src/pages/LandingPage/ToolsShowcaseSection.module.css */
+.toolsShowcaseSection {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    background-color: var(--color-dark-background); /* Ensure background is set */
+    color: var(--color-text-light); /* Ensure text color is set */
+  }
+  
+  .leftSidebar {
+    background-color: var(--color-dark-surface);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    min-width: 250px;
+    max-width: 300px;
+    flex: 1 1 250px; /* Adjusted flex basis for 2-column layout */
+  }
+  
+  .sidebarHeader {
+    display: flex;
+    flex-direction: column; /* Stack logo and tabs */
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .sidebarLogo {
+    height: 25px; /* Adjust size for sidebar logo */
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .sidebarTabs {
+    display: flex;
+    gap: var(--spacing-xs);
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .sidebarTab {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .sidebarTab.active {
+    background-color: var(--color-blue-accent);
+    color: var(--color-text-light);
+    border-color: var(--color-blue-accent);
+  }
+  
+  .sidebarTab:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-blue-accent);
+  }
+  
+  .sidebarNav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebarNavItem {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .sidebarNavLink {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--color-text-light);
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .sidebarNavLink:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-blue-accent);
+  }
+  
+  .sidebarIcon {
+    color: var(--color-text-secondary);
+  }
+  
+  .sidebarNavLink:hover .sidebarIcon {
+      color: var(--color-blue-accent);
+  }
+  
+  .sidebarNavLink .percentage {
+    margin-left: auto; /* Push percentage to the right */
+    background-color: var(--color-green-success);
+    color: var(--color-text-light);
+    padding: 2px 6px;
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-sm);
+  }
+  
+  
+  .mainContentArea {
+    flex: 3 1 600px; /* Adjusted flex basis to take more space, min-width 600px */
+    min-width: 400px; /* Minimum width for table */
+    background-color: var(--color-dark-surface);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+  }
+  
+  .tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+  
+  .tableHeader h2 {
+    font-size: var(--font-size-xl);
+    color: var(--color-text-light);
+  }
+  
+  .tableFilters {
+    display: flex;
+    gap: var(--spacing-xs);
+  }
+  
+  .filterButton {
+    background: none;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxs);
+  }
+  
+  .filterButton.active {
+    background-color: var(--color-blue-accent);
+    color: var(--color-text-light);
+    border-color: var(--color-blue-accent);
+  }
+  
+  .filterButton:hover:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-blue-accent);
+  }
+  
+  .lockIconSmall {
+      font-size: var(--font-size-sm);
+  }
+  
+  .tableContainer {
+    overflow-x: auto; /* Allows horizontal scrolling for large tables */
+  }
+  
+  .dataTablet {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .dataTablet th, .dataTablet td {
+    padding: var(--spacing-sm);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap; /* Prevent content from wrapping in cells */
+  }
+  
+  .dataTablet th {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  
+  .dataTablet td {
+    color: var(--color-text-light);
+    font-size: var(--font-size-base);
+  }
+  
+  .dataTablet tbody tr:last-child td {
+    border-bottom: none; /* No border for the last row */
+  }
+  
+  .betBooks {
+      display: flex;
+      flex-direction: column;
+      gap: 4px; /* Small gap between book entries */
+      font-size: var(--font-size-sm);
+  }
+  
+  .betBooks span {
+      color: var(--color-text-secondary); /* Softer color for sportsbook names */
+  }
+  
+  /* Responsive adjustments for ToolsShowcaseSection */
+  @media (max-width: 992px) {
+    .toolsShowcaseSection {
+      flex-direction: column; /* Stack sidebar and main content */
+      text-align: center;
+    }
+  
+    .leftSidebar, .mainContentArea {
+      width: 100%; /* Take full width */
+      max-width: unset; /* Remove max-width constraints */
+      margin-bottom: var(--spacing-lg); /* Space between stacked items */
+    }
+  
+    .leftSidebar {
+      max-width: 100%; /* Remove max-width on smaller screens */
+    }
+  
+    .sidebarHeader {
+      text-align: center;
+    }
+  
+    .sidebarTabs {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .sidebarNav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .sidebarNavItem {
+      flex: 1 1 auto; /* Allow items to grow/shrink */
+      margin-bottom: var(--spacing-xs);
+      text-align: left; /* Keep text left-aligned within item */
+    }
+  
+    .sidebarNavLink {
+      justify-content: center; /* Center link content */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dataTablet th, .dataTablet td {
+      padding: var(--spacing-sm) var(--spacing-xs); /* Smaller padding for table cells */
+      font-size: var(--font-size-sm);
+    }
+  
+    .betBooks {
+      font-size: var(--font-size-xs);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tableHeader {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .tableFilters {
+      flex-wrap: wrap; /* Allow filter buttons to wrap */
+    }
+  }
