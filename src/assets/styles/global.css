@@ -1,57 +1,56 @@
-/* src/assets/styles/global.css */
+/* global.css */
 
-/* Basic Reset */
+/* === CSS Reset === */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* === Base Styles === */
 body {
   font-family: 'Inter', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--color-dark-background);
-  color: var(--color-text-light);
+  background-color: #333446; /* Changed to your darkest color */
+  color: #B8CFCE; /* Changed to your main light text color */
   line-height: 1.6;
 }
 
-/* Typography */
+/* === Typography === */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-md);
+  color: #B8CFCE; /* Changed to your main light text color */
   line-height: 1.2;
+  margin-bottom: 0.5em;
 }
-
-h1 { font-size: var(--font-size-xxl); }
-h2 { font-size: var(--font-size-xl); }
-h3 { font-size: var(--font-size-lg); }
-h4 { font-size: var(--font-size-md); }
-h5 { font-size: var(--font-size-base); }
-h6 { font-size: var(--font-size-sm); }
 
 p {
-  margin-bottom: var(--spacing-sm);
+  color: #7F8CAA; /* Changed to your secondary text color */
+  margin-bottom: 1em;
 }
 
+/* === Links === */
 a {
-  color: var(--color-blue-accent);
+  color: #B8CFCE; /* Changed to your main light text color */
   text-decoration: none;
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease;
 }
-
 a:hover {
-  color: var(--color-blue-dark);
+  color: #EAEFEF; /* Changed to your very light accent on hover */
   text-decoration: underline;
 }
 
-/* Utility Classes */
+/* === Utility Classes === */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md);
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .flex {
@@ -60,8 +59,8 @@ a:hover {
 
 .flex-center {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .flex-between {
@@ -70,48 +69,35 @@ a:hover {
   align-items: center;
 }
 
-.text-center {
-  text-align: center;
-}
-
-/* Image styling for responsiveness */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block; /* Removes extra space below images */
-}
-
-/* Basic form elements for consistency */
-input, button, select, textarea {
+/* === Forms & Buttons === */
+input, button, textarea, select {
   font-family: inherit;
-  font-size: var(--font-size-base);
-  color: var(--color-text-light);
-  background-color: var(--color-dark-surface);
-  border: 1px solid var(--color-border);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-sm);
-  outline: none;
-}
-
-input:focus, textarea:focus {
-  border-color: var(--color-blue-accent);
+  font-size: 1rem;
+  border: 1px solid #7F8CAA; /* Changed to your secondary text/border color */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
 }
 
 button {
+  background-color: #B8CFCE; /* Changed to your main light text color for primary button background */
+  color: #333446; /* Changed to your darkest color for text on primary button */
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Scrollbar styling (optional, for dark themes) */
+button:hover {
+  background-color: #EAEFEF; /* Changed to your very light accent on hover */
+  transform: scale(1.05);
+}
+
+/* === Scrollbar Styling === */
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-dark-surface);
+  background: #333446; /* Changed to your darkest color */
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-blue-accent);
-  border-radius: var(--border-radius-sm);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-blue-dark);
+  background-color: #7F8CAA; /* Changed to your secondary text/border color */
+  border-radius: 10px;
 }

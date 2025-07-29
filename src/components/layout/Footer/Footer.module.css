@@ -1,6 +1,6 @@
 /* src/components/layout/Footer/Footer.module.css */
 .footer {
-  background-color: var(--color-dark-surface); /* A slightly lighter dark for footer background */
+  background-color: var(--color-dark-surface); /* Uses your defined dark surface */
   color: var(--color-text-light);
   padding: var(--spacing-xxl) var(--spacing-lg);
   border-top: 1px solid var(--color-border); /* Subtle line at the top */
@@ -8,17 +8,17 @@
 
 .footerContent {
   display: flex;
-  flex-wrap: wrap; /* Allow columns to wrap */
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--spacing-xxl); /* Space between major sections */
-  max-width: 1200px; /* Max width for footer content */
-  margin: 0 auto; /* Center the footer content */
-  padding-bottom: var(--spacing-xl); /* Space above copyright */
+  gap: var(--spacing-xxl);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: var(--spacing-xl);
 }
 
 /* Brand Section */
 .footerBrand {
-  flex: 1 1 250px; /* Allows brand to take space, min 250px */
+  flex: 1 1 250px;
   text-align: left;
 }
 
@@ -27,12 +27,12 @@
   font-weight: 800;
   color: var(--color-text-light);
   text-decoration: none;
-  display: block; /* Ensures margin works */
+  display: block;
   margin-bottom: var(--spacing-sm);
 }
 
 .logoHighlight {
-  color: var(--color-lime-accent); /* Use lime accent for "es" in "Surebetes" */
+  color: var(--color-lime-accent); /* Will now use --color-text-light or --color-blue-accent from new palette */
 }
 
 .brandSlogan {
@@ -55,22 +55,22 @@
 }
 
 .socialIcons a:hover {
-  color: var(--color-lime-accent); /* Hover effect for social icons */
+  color: var(--color-lime-accent); /* Will now use --color-text-light or --color-blue-accent from new palette for hover */
   transform: translateY(-3px);
 }
 
 /* Navigation Links */
 .footerLinks {
   display: flex;
-  flex: 2 1 400px; /* Allows links to take more space, min 400px for 3 columns */
-  justify-content: space-around; /* Distribute columns evenly */
-  gap: var(--spacing-lg); /* Space between link columns */
-  flex-wrap: wrap; /* Allow link columns to wrap */
+  flex: 2 1 400px;
+  justify-content: space-around;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
 }
 
 .linkColumn {
   text-align: left;
-  min-width: 120px; /* Minimum width for each link column */
+  min-width: 120px;
 }
 
 .columnTitle {
@@ -98,12 +98,12 @@
 }
 
 .linkColumn a:hover {
-  color: var(--color-lime-accent); /* Hover effect for links */
+  color: var(--color-lime-accent); /* Will now use --color-text-light or --color-blue-accent from new palette for hover */
 }
 
 /* Contact/Newsletter Section */
 .footerContact {
-  flex: 1 1 250px; /* Allows contact to take space, min 250px */
+  flex: 1 1 250px;
   text-align: left;
 }
 
@@ -116,7 +116,7 @@
 
 .newsletterForm {
   display: flex;
-  flex-direction: column; /* Stack input and button */
+  flex-direction: column;
   gap: var(--spacing-sm);
 }
 
@@ -124,7 +124,7 @@
   padding: var(--spacing-sm);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-sm);
-  background-color: var(--color-dark-background); /* Darker input background */
+  background-color: var(--color-dark-background); /* Uses your defined dark background */
   color: var(--color-text-light);
   font-size: var(--font-size-base);
 }
@@ -136,8 +136,8 @@
 
 .newsletterForm button {
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: var(--color-lime-accent); /* Lime accent for subscribe button */
-  color: var(--color-dark-background); /* Dark text on lime button */
+  background-color: var(--color-lime-accent); /* Will now use --color-text-light or --color-blue-accent from new palette for button */
+  color: var(--color-dark-background); /* Dark text on accent button */
   border: none;
   border-radius: var(--border-radius-sm);
   font-size: var(--font-size-base);
@@ -147,7 +147,7 @@
 }
 
 .newsletterForm button:hover {
-  background-color: #8cff00; /* Slightly brighter lime on hover */
+  background-color: var(--color-light-highlight); /* Slightly brighter accent on hover */
   transform: translateY(-2px);
 }
 
@@ -155,7 +155,7 @@
 .footerBottom {
   text-align: center;
   padding-top: var(--spacing-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Lighter separator */
+  border-top: 1px solid rgba(127, 140, 170, 0.1); /* Using rgba of --color-text-secondary (7F8CAA) for lighter separator */
   margin-top: var(--spacing-xl);
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
@@ -171,23 +171,23 @@
     gap: var(--spacing-xl);
   }
   .footerLinks {
-    flex: 1 1 100%; /* Links take full width, stack horizontally if possible */
+    flex: 1 1 100%;
     justify-content: space-around;
   }
   .linkColumn {
-    min-width: 100px; /* Adjust min width for columns */
+    min-width: 100px;
   }
   .footerBrand,
   .footerContact {
-    flex-basis: 100%; /* Take full width on smaller screens */
-    text-align: center; /* Center these sections when stacked */
+    flex-basis: 100%;
+    text-align: center;
   }
   .socialIcons {
-    justify-content: center; /* Center social icons */
+    justify-content: center;
   }
   .newsletterForm {
-    max-width: 300px; /* Constrain form width */
-    margin: 0 auto; /* Center the form */
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 
@@ -215,24 +215,24 @@
 
 @media (max-width: 480px) {
   .footerContent {
-    flex-direction: column; /* Stack all major sections */
+    flex-direction: column;
     gap: var(--spacing-lg);
   }
   .linkColumn {
-    text-align: center; /* Center link columns when stacked */
-    width: 100%; /* Full width */
+    text-align: center;
+    width: 100%;
   }
   .footerLinks {
-    flex-direction: column; /* Stack link columns */
+    flex-direction: column;
   }
   .linkColumn ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-xs) var(--spacing-md); /* Space out individual links */
+    gap: var(--spacing-xs) var(--spacing-md);
   }
   .linkColumn li {
-    margin-bottom: 0; /* Remove bottom margin for inline links */
+    margin-bottom: 0;
   }
   .footerBottom {
     font-size: var(--font-size-xs);

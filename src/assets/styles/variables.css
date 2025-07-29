@@ -1,18 +1,23 @@
-/* src/assets/styles/variables.css */
+/* src/styles/_variables.css */
+
 :root {
-  --color-dark-background: #1a1a2e; /* Main background */
-  --color-dark-surface: #26263f;    /* Card/section background, also for header/footer */
-  --color-blue-accent: #007bff;     /* Primary blue for buttons, highlights */
-  --color-blue-dark: #0056b3;      /* Darker blue for hover states */
-  --color-text-light: #e0e0e0;      /* General light text */
-  --color-text-secondary: #aaaaaa;  /* Lighter gray text */
-  --color-border: #444466;          /* Subtle border color */
+  /* Color Palette */
+  --color-dark-background: #333446;
+  --color-dark-surface: #333446; /* Can be the same as background for sleek look, or slightly different */
+  --color-dark-surface-light: #3E3F57; /* A slightly lighter shade for accents like popular cards */
+  --color-text-light: #B8CFCE; /* Main light text color */
+  --color-text-secondary: #7F8CAA; /* Secondary text color, subtle */
+  --color-border: #7F8CAA; /* Border color, matching secondary text */
 
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 12px;
-  --border-radius-circle: 50%;
+  /* Accent Colors (both now map to the same primary accent as per your latest instructions) */
+  --color-lime-accent: #B8CFCE; /* Primary accent, used where lime/green was before */
+  --color-blue-accent: #B8CFCE; /* Primary accent, used where blue was before */
 
+  /* Other specific colors */
+  --color-light-highlight: #EAEFEF; /* Very light highlight, almost white */
+  --color-green-success: #4ade80; /* Specific green for success indicators, kept as original */
+
+  /* Spacing */
   --spacing-xxs: 4px;
   --spacing-xs: 8px;
   --spacing-sm: 12px;
@@ -20,52 +25,20 @@
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
 
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
-  --font-size-base: 1rem;    /* 16px */
-  --font-size-md: 1.125rem;  /* 18px */
-  --font-size-lg: 1.5rem;    /* 24px */
-  --font-size-xl: 2rem;      /* 32px */
-  --font-size-xxl: 3rem;     /* 48px */
-   /* New/Updated variables for this design */
-   --color-dark-surface: #1a1e27; /* Main header/dropdown background, also used for cards */
-   --color-dark-background: #11151c; /* Overall page background */
-   --color-blue-accent: #007bff; /* Primary action color, highlights */
-   --color-text-light: #ffffff; /* Main text color */
-   --color-text-secondary: #a0a0a0; /* Secondary text, icons, borders */
-   --color-border: #333; /* Border color for elements */
-   --color-green-success: #28a745; /* Example for success state or positive value */
-   --color-lime-accent: #a3e635; /* NEW: Lime green for profit section highlight */
- 
-   /* Spacing */
-   --spacing-xxs: 4px;
-   --spacing-xs: 8px;
-   --spacing-sm: 12px;
-   --spacing-md: 16px;
-   --spacing-lg: 24px;
-   --spacing-xl: 32px;
-   --spacing-xxl: 48px;
-   --spacing-xxxl: 64px;
- 
-   /* Font Sizes */
-   --font-size-sm: 0.875rem; /* 14px */
-   --font-size-base: 1rem; /* 16px */
-   --font-size-md: 1.125rem; /* 18px */
-   --font-size-lg: 1.25rem; /* 20px */
-   --font-size-xl: 1.5rem; /* 24px */
-   --font-size-xxl: 2rem; /* 32px */
-   --font-size-xxxl: 2.5rem; /* 40px */
-   --font-size-hero-title: 3.5rem; /* 56px */
- 
-   /* Border Radii */
-   --border-radius-sm: 4px;
-   --border-radius-md: 8px;
-   --border-radius-lg: 12px;
-   --border-radius-xl: 16px; /* Added for more rounded cards */
-   --border-radius-circle: 50%;
- 
-   /* Component Heights */
-   --header-height: 60px; /* Example header height */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-xxl: 1.5rem; /* 24px */
+  --font-size-xxxl: 2.25rem; /* 36px */
 
-
+  /* Border Radii */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px; /* Added for completeness, often used */
+  --border-radius-xl: 16px;
 }

@@ -76,7 +76,7 @@ const AboutUsSection = () => {
       <div className={styles.callToAction}>
         <p className={styles.ctaText}>Want to see how it works in action?</p>
         <div className={styles.ctaButtons}>
-          <Button variant="primary" size="large">
+          <Button variant="secondary" size="large">
             Start your free trial
           </Button>
           <Button variant="secondary" size="large">

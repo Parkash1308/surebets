@@ -41,7 +41,7 @@ const HeroSection = () => {
                             />
                         )}
                     </div>
-                    <Button variant="primary" size="large">Send me free bets</Button>
+                    <Button variant="secondary" size="large">Send me free bets</Button>
                 </div>
             </div>
             <div className={styles.heroImageContainer}>
@@ -49,7 +49,7 @@ const HeroSection = () => {
                 <div className={styles.profitModule}>
                     <FaLock className={styles.lockIcon} />
                     <h3>See how much money you can make with OddsJam</h3> {/* Renamed from OddsJam to Surebets where applicable */}
-                    <Button variant="primary">Estimate your profit</Button>
+                    <Button variant="secondary">Estimate your profit</Button>
                 </div>
             </div>
         </section>

@@ -3,16 +3,16 @@ import React from 'react';
 import styles from './ToolsShowcaseSection.module.css'; // New CSS module for ToolsShowcaseSection
 import Button from '../../components/common/Button/Button.jsx'; // Corrected path
 import { FaChartLine, FaLock } from 'react-icons/fa'; // Icons for sidebar and table
-import logo from '../../assets/images/logo.svg'; // Assuming logo.svg in src/assets/
+import logo from '../../assets/images/oddsjam-logo.png'; // Assuming logo.svg in src/assets/
 
 const ToolsShowcaseSection = () => {
   return (
     <section className={styles.toolsShowcaseSection}>
         <div className={styles.leftSidebar}>
             <div className={styles.sidebarHeader}>
-                <img src={logo} alt="Surebets Logo" className={styles.sidebarLogo} />
+                {/* <img src={logo} alt="Surebets Logo" className={styles.sidebarLogo} /> */}
                 <div className={styles.sidebarTabs}>
-                    <button className={`${styles.sidebarTab} ${styles.active}`}>SPORTS BETTING</button>
+                    <button className={styles.sidebarTab}>SPORTS BETTING</button>
                     <button className={styles.sidebarTab}>FANTASY</button>
                 </div>
             </div>
@@ -40,7 +40,7 @@ const ToolsShowcaseSection = () => {
             <div className={styles.tableHeader}>
                 <h2>Arbitrage Bets</h2>
                 <div className={styles.tableFilters}>
-                    <button className={`${styles.filterButton} ${styles.active}`}>Pre-match</button>
+                    <button className={styles.filterButton}>Pre-match</button>
                     <button className={styles.filterButton}>500</button>
                     <button className={styles.filterButton}>Live <FaLock className={styles.lockIconSmall} /></button>
                 </div>
@@ -68,7 +68,7 @@ const ToolsShowcaseSection = () => {
                                     <span>FanDuel: +205</span>
                                 </div>
                             </td>
-                            <td><Button variant="primary" size="small">BET ↗</Button></td>
+                            <td><Button variant="secondary" size="small">BET ↗</Button></td>
                             <td>-175</td>
                         </tr>
                         <tr>
@@ -81,7 +81,7 @@ const ToolsShowcaseSection = () => {
                                     <span>Caesars: -160</span>
                                 </div>
                             </td>
-                            <td><Button variant="primary" size="small">BET ↗</Button></td>
+                            <td><Button variant="secondary" size="small">BET ↗</Button></td>
                             <td>-155</td>
                         </tr>
                     </tbody>

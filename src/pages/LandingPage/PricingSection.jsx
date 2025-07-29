@@ -72,7 +72,7 @@ const PricingSection = () => {
               ))}
             </ul>
             <Button
-              variant={tier.isPopular ? 'primary' : 'secondary'}
+              variant={tier.isPopular ? 'secondary' : 'secondary'}
               size="large"
               className={styles.tierButton}
             >

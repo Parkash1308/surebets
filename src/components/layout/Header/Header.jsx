@@ -115,7 +115,7 @@ const Header = () => {
             </div>
 
             <Button variant="secondary" size="small">Login</Button>
-            <Button variant="primary" size="small">Try for free</Button>
+            <Button variant="secondary" size="small">Try for free</Button>
         </div>
       </div>
 
