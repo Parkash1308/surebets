@@ -1,0 +1,90 @@
+/* src/components/layout/Header/Header.module.css */
+
+.header {
+  width: 100%;
+  height: var(--header-height); /* Defined in variables.css */
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  /* This container helps align the image */
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 100px; /* Adjusted: Slightly larger default height for desktop */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Adjusted: Allow it to be a bit wider if needed */
+  object-fit: contain; /* Ensure the entire image is visible */
+}
+
+.nav {
+  /* Desktop navigation styling */
+}
+
+.navList {
+  display: flex;
+  gap: var(--spacing-xl); /* Space between nav items */
+}
+
+.navItem {
+  /* Individual nav item styles */
+}
+
+.navLink {
+  color: var(--color-text-dark);
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  color: var(--color-primary); /* Primary color on hover */
+}
+
+.authButtons {
+  display: flex;
+  gap: var(--spacing-sm); /* Space between login and get started buttons */
+}
+
+.loginButton {
+  color: var(--color-text-dark); /* Ensure text button is visible against background */
+}
+
+/* Responsive adjustments for Header */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Hide navigation on smaller screens; typically a hamburger menu would appear */
+  }
+  .authButtons {
+    gap: var(--spacing-xs);
+  }
+  .header {
+    padding: 0 var(--spacing-md);
+  }
+  .logoImage {
+    height: 35px; /* Smaller logo on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .logoImage {
+    height: 30px; /* CORRECTED: A reasonable height for mobile */
+  }
+  .header {
+    padding: 0 var(--spacing-sm);
+  }
+  .authButtons .button.small { /* Adjust button size on very small screens */
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+  }
+}

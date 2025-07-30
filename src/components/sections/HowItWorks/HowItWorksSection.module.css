@@ -1,0 +1,163 @@
+.howItWorksSection {
+  background-color: var(--color-light-gray); /* Light gray background */
+  color: var(--color-text-dark);
+  padding: var(--spacing-xxxl) var(--spacing-lg); /* Consistent section padding */
+  text-align: center;
+}
+
+.sectionHeader {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xxxl); /* Center header and add bottom margin */
+}
+
+.title {
+  font-size: var(--font-size-xxxl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-dark);
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-dark);
+  margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid for steps */
+  gap: var(--spacing-xl); /* Gap between steps */
+  max-width: 1000px; /* Limit grid width */
+  margin: 0 auto;
+}
+
+.stepCard {
+  background-color: var(--color-background); /* White card background */
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.stepCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.stepIcon {
+  font-size: var(--font-size-xxxxl); /* Large icon size */
+  color: var(--color-primary); /* Primary blue for icons */
+  margin-bottom: var(--spacing-md);
+  /* Optional: Larger, more prominent icon circle for steps */
+  background-color: var(--color-light-gray);
+  border-radius: 50%;
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px; /* Fixed size for icon circle */
+  height: 90px;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.stepTitle {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text-dark);
+}
+
+.stepDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--font-size-xxxl);
+  }
+  .subtitle {
+    font-size: var(--font-size-base);
+  }
+  .stepsGrid {
+    gap: var(--spacing-lg);
+  }
+  .stepCard {
+    padding: var(--spacing-lg);
+  }
+  .stepIcon {
+    font-size: var(--font-size-xxxl);
+    width: 70px;
+    height: 70px;
+  }
+  .stepTitle {
+    font-size: var(--font-size-lg);
+  }
+  .stepDescription {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    margin-bottom: var(--spacing-xxl);
+  }
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
+  .stepsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Allow smaller min width on tablets */
+    gap: var(--spacing-md);
+  }
+  .stepCard {
+    padding: var(--spacing-md);
+  }
+  .stepIcon {
+    font-size: var(--font-size-xxl);
+    width: 60px;
+    height: 60px;
+  }
+  .stepTitle {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .howItWorksSection {
+    padding: var(--spacing-xxl) var(--spacing-sm);
+  }
+  .title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+  }
+  .subtitle {
+    font-size: var(--font-size-xs);
+  }
+  .stepsGrid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: var(--spacing-lg);
+  }
+  .stepCard {
+    padding: var(--spacing-lg);
+  }
+  .stepIcon {
+    font-size: var(--font-size-xl);
+    width: 50px;
+    height: 50px;
+  }
+  .stepTitle {
+    font-size: var(--font-size-md);
+  }
+  .stepDescription {
+    font-size: var(--font-size-sm);
+  }
+}

@@ -1,0 +1,150 @@
+.footer {
+  background-color: var(--color-light-gray); /* Light Gray background */
+  color: var(--color-text-dark);
+  padding: var(--spacing-xxxl) var(--spacing-lg);
+  border-top: 1px solid var(--color-border-subtle);
+  font-size: var(--font-size-sm);
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.footerBrand {
+  flex-basis: 200px; /* Min width for brand */
+  margin-bottom: var(--spacing-lg); /* Space when stacked */
+}
+
+.footerLogo {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.tagline {
+  color: var(--color-text-dark);
+  margin-bottom: 0;
+}
+
+.footerNav {
+  display: flex;
+  gap: var(--spacing-xl);
+  flex-wrap: wrap; /* Allow columns to wrap */
+  flex-grow: 1; /* Allow nav section to grow */
+  justify-content: space-around; /* Distribute columns */
+}
+
+.navColumn {
+  margin-bottom: var(--spacing-lg); /* Space when stacked */
+}
+
+.navColumn h4 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-dark);
+}
+
+.navColumn ul {
+  list-style: none;
+  padding: 0;
+}
+
+.navColumn li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.navColumn a {
+  color: var(--color-text-dark);
+  transition: color 0.2s ease-in-out;
+}
+
+.navColumn a:hover {
+  color: var(--color-primary);
+}
+
+.footerPaymentIcons {
+  margin-bottom: var(--spacing-lg); /* Space when stacked */
+}
+
+.footerPaymentIcons h4 {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-dark);
+}
+
+.paymentIcons {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.paymentIcons img {
+  height: 24px; /* Adjust size as needed */
+  opacity: 0.7;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.paymentIcons img:hover {
+  opacity: 1;
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-dark);
+  font-size: var(--font-size-xs);
+}
+
+/* Responsive adjustments for Footer */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footerNav {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg); /* Space between stacked columns */
+  }
+  .navColumn ul {
+    text-align: center;
+  }
+  .paymentIcons {
+    justify-content: center;
+  }
+  .footerBrand, .footerPaymentIcons {
+    margin-bottom: var(--spacing-lg);
+  }
+  .footer {
+    padding: var(--spacing-xxl) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+  .footerLogo {
+    font-size: var(--font-size-lg);
+  }
+  .navColumn h4 {
+    font-size: var(--font-size-sm);
+  }
+  .navColumn li {
+    font-size: var(--font-size-xs);
+  }
+  .paymentIcons img {
+    height: 20px;
+  }
+}

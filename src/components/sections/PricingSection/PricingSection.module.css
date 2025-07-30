@@ -1,0 +1,290 @@
+.pricingSection {
+    background-color: var(--color-background); /* White background */
+    color: var(--color-text-dark);
+    padding: var(--spacing-xxxl) var(--spacing-lg); /* Consistent section padding */
+    text-align: center;
+  }
+  
+  .sectionHeader {
+    max-width: 800px;
+    margin: 0 auto var(--spacing-xxxl); /* Center header and add bottom margin */
+  }
+  
+  .title {
+    font-size: var(--font-size-xxxl);
+    font-weight: 800;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-dark);
+  }
+  
+  .subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-dark);
+    margin-bottom: 0;
+  }
+  
+  .toggleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xxxl);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-text-dark);
+  }
+  
+  .toggleOption {
+    color: var(--color-text-dark);
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .toggleOption.active {
+    color: var(--color-primary);
+  }
+  
+  .discountBadge {
+    background-color: var(--color-accent); /* Green accent for discount */
+    color: var(--color-background);
+    font-size: var(--font-size-xs);
+    padding: 3px 8px;
+    border-radius: var(--border-radius-sm);
+    margin-left: var(--spacing-xs);
+    white-space: nowrap;
+  }
+  
+  /* Toggle Switch Styling */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-border-subtle);
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--color-background);
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--color-primary);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .pricingGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid for pricing cards */
+    gap: var(--spacing-xl); /* Gap between cards */
+    max-width: 1100px; /* Limit grid width */
+    margin: 0 auto;
+  }
+  
+  .pricingCard {
+    background-color: var(--color-light-gray); /* Light gray for card background */
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-xl);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* For the "Most Popular" badge */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    border: 2px solid transparent; /* Default transparent border */
+  }
+  
+  .pricingCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .popularCard {
+    border-color: var(--color-primary); /* Primary color border for popular card */
+    box-shadow: 0 6px 20px rgba(30, 136, 229, 0.2); /* Stronger shadow for popular card */
+    background-color: var(--color-background); /* White background for popular card */
+  }
+  
+  .popularBadge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary); /* Primary color for badge */
+    color: var(--color-background);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    padding: 5px 15px;
+    border-radius: var(--border-radius-md);
+    white-space: nowrap;
+  }
+  
+  .planName {
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-dark);
+  }
+  
+  .price {
+    font-size: var(--font-size-display); /* Very large price */
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1; /* Adjust line height to prevent extra space */
+  }
+  
+  .billingCycle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
+    font-weight: 500;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+  
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
+    width: 100%; /* Ensure list takes full width for alignment */
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-xs);
+    text-align: left; /* Align text within list item */
+  }
+  
+  .featureItem:last-child {
+    margin-bottom: 0;
+  }
+  
+  .checkIcon {
+    color: var(--color-accent); /* Green for included features */
+    font-size: var(--font-size-lg);
+    flex-shrink: 0; /* Prevent icon from shrinking */
+  }
+  
+  .timesIcon {
+    color: var(--color-border-subtle); /* Lighter color for excluded features */
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+  }
+  
+  .choosePlanButton {
+    margin-top: auto; /* Push button to the bottom of the card */
+    width: 100%; /* Full width button */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .title {
+      font-size: var(--font-size-xxxl);
+    }
+    .subtitle {
+      font-size: var(--font-size-base);
+    }
+    .toggleContainer {
+      margin-bottom: var(--spacing-xxl);
+      font-size: var(--font-size-base);
+    }
+    .pricingGrid {
+      gap: var(--spacing-lg);
+    }
+    .pricingCard {
+      padding: var(--spacing-lg);
+    }
+    .planName {
+      font-size: var(--font-size-xl);
+    }
+    .price {
+      font-size: var(--font-size-xxxxl);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sectionHeader {
+      margin-bottom: var(--spacing-xxl);
+    }
+    .title {
+      font-size: var(--font-size-xxl);
+    }
+    .subtitle {
+      font-size: var(--font-size-sm);
+    }
+    .toggleContainer {
+      flex-direction: column; /* Stack toggle options */
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-xl);
+    }
+    .pricingGrid {
+      grid-template-columns: 1fr; /* Single column on tablets and mobiles */
+      gap: var(--spacing-lg); /* Gap between stacked cards */
+    }
+    .pricingCard {
+      max-width: 380px; /* Max width for single column cards */
+      margin: 0 auto; /* Center cards when stacked */
+    }
+    .price {
+      font-size: var(--font-size-xxxl); /* Slightly smaller price on mobile */
+    }
+    .featureItem, .checkIcon, .timesIcon {
+      font-size: var(--font-size-sm);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .pricingSection {
+      padding: var(--spacing-xxl) var(--spacing-sm);
+    }
+    .title {
+      font-size: var(--font-size-xl);
+      margin-bottom: var(--spacing-md);
+    }
+    .subtitle {
+      font-size: var(--font-size-xs);
+    }
+    .pricingCard {
+      padding: var(--spacing-md);
+    }
+    .planName {
+      font-size: var(--font-size-lg);
+    }
+    .price {
+      font-size: var(--font-size-xxl);
+    }
+    .billingCycle {
+      font-size: var(--font-size-xs);
+    }
+  }

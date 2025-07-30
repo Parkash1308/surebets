@@ -1,0 +1,97 @@
+.button {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Primary Button */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-background); /* White text on blue */
+}
+
+.primary:hover {
+  background-color: #1a76d2; /* Slightly darker blue */
+  box-shadow: 0 4px 8px rgba(30, 136, 229, 0.3); /* Shadow based on primary color */
+}
+
+/* Accent Button (for profit/success CTAs) */
+.accent {
+  background-color: var(--color-accent);
+  color: var(--color-background); /* White text on green */
+}
+
+.accent:hover {
+  background-color: #388e3c; /* Slightly darker green */
+  box-shadow: 0 4px 8px rgba(67, 160, 71, 0.3); /* Shadow based on accent color */
+}
+
+/* Secondary/Outline Button */
+.secondary {
+  background-color: transparent;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.secondary:hover {
+  background-color: rgba(30, 136, 229, 0.1); /* Light tint of primary */
+  color: var(--color-primary);
+}
+
+/* Text Button */
+.text {
+  background: none;
+  border: none;
+  color: var(--color-text-dark);
+  padding: var(--spacing-xxs) var(--spacing-xs);
+  font-weight: 500;
+}
+
+.text:hover {
+  color: var(--color-primary);
+  background-color: var(--color-light-gray);
+}
+
+
+/* Sizes */
+.small {
+  padding: var(--spacing-xs) var(--spacing-md);
+  font-size: var(--font-size-sm);
+}
+
+.medium {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+}
+
+.large {
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-lg);
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .button {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+  .large {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-base);
+  }
+}

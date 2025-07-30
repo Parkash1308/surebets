@@ -1,0 +1,43 @@
+/* src/styles/variables.css */
+
+:root {
+  /* Colors */
+  --color-primary: #1E88E5; /* Blue */
+  --color-accent: #43A047;  /* Green (for profit/success) */
+  --color-background: #FFFFFF; /* White */
+  --color-text-dark: #333333; /* Dark Gray */
+  --color-light-gray: #F5F5F5; /* Light Gray for backgrounds, card components, subtle borders */
+  --color-border-subtle: #E0E0E0; /* Slightly darker light gray for borders */
+
+  /* Spacing */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-xxxl: 64px;
+  --spacing-xxxxl: 96px;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.125rem; /* 18px */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-xxl: 2rem; /* 32px */
+  --font-size-xxxl: 2.5rem; /* 40px */
+  --font-size-xxxxl: 3rem; /* 48px */
+  --font-size-display: 4rem; /* 64px for very large headlines */
+
+  /* Border Radii */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+
+  /* Header Height (example, adjust as needed) */
+  --header-height: 70px;
+}

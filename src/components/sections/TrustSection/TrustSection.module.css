@@ -1,0 +1,287 @@
+.trustSection {
+  background-color: var(--color-light-gray); /* Light gray background */
+  color: var(--color-text-dark);
+  padding: var(--spacing-xxxl) var(--spacing-lg); /* Consistent section padding */
+  text-align: center;
+}
+
+.sectionHeader {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xxxl); /* Center header and add bottom margin */
+}
+
+.title {
+  font-size: var(--font-size-xxxl);
+  font-weight: 800;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-dark);
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-dark);
+  margin-bottom: 0;
+}
+
+/* Reviews Grid */
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 1200px;
+  margin: 0 auto var(--spacing-xxxl); /* Margin below reviews */
+}
+
+.reviewCard {
+  background-color: var(--color-background); /* White card background */
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.reviewCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.starRating {
+  margin-bottom: var(--spacing-md);
+  color: #FFD700; /* Gold color for stars */
+  font-size: var(--font-size-lg);
+}
+
+.starFilled {
+  color: #FFD700; /* Gold */
+}
+
+.starEmpty {
+  color: var(--color-border-subtle); /* Lighter gray for empty stars */
+}
+
+.reviewText {
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1; /* Allow text to take up space */
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Limit testimonial to max 5 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.reviewAuthor {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 0;
+  margin-top: auto; /* Push author to bottom if text is short */
+}
+
+.reviewLocation {
+  font-weight: 400;
+  color: var(--color-text-dark);
+  opacity: 0.8;
+}
+
+/* Stats Container */
+.statsContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+  max-width: 1000px;
+  margin: 0 auto var(--spacing-xxxl);
+  background-color: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 150px; /* Ensure stats don't get too squished */
+}
+
+.statIcon {
+  font-size: var(--font-size-xxxxl);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.statValue {
+  font-size: var(--font-size-xxxxl);
+  font-weight: 800;
+  color: var(--color-text-dark);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-xs);
+}
+
+.statLabel {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+/* Payment Icons Container */
+.paymentIconsContainer {
+  margin-top: var(--spacing-xxxl);
+  padding-top: var(--spacing-xxl);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.paymentIconsContainer h3 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-dark);
+}
+
+.paymentIcons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-xl);
+}
+
+.paymentIcon {
+  height: 35px; /* Adjust size of payment icons */
+  width: auto;
+  filter: grayscale(80%); /* Make them slightly desaturated */
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+}
+
+.paymentIcon:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .title {
+    font-size: var(--font-size-xxxl);
+  }
+  .subtitle {
+    font-size: var(--font-size-base);
+  }
+  .reviewsGrid {
+    gap: var(--spacing-lg);
+  }
+  .reviewCard {
+    padding: var(--spacing-lg);
+  }
+  .reviewText {
+    font-size: var(--font-size-sm);
+  }
+  .reviewAuthor {
+    font-size: var(--font-size-xs);
+  }
+  .statItem {
+    min-width: unset; /* Allow flexible width */
+    flex-basis: 30%; /* Try to fit 3 per row on larger tablets */
+  }
+  .statIcon {
+    font-size: var(--font-size-xxxl);
+  }
+  .statValue {
+    font-size: var(--font-size-xxxl);
+  }
+  .statLabel {
+    font-size: var(--font-size-base);
+  }
+  .paymentIconsContainer h3 {
+    font-size: var(--font-size-lg);
+  }
+  .paymentIcon {
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionHeader {
+    margin-bottom: var(--spacing-xxl);
+  }
+  .title {
+    font-size: var(--font-size-xxl);
+  }
+  .subtitle {
+    font-size: var(--font-size-sm);
+  }
+  .reviewsGrid {
+    grid-template-columns: 1fr; /* Single column on tablets/mobiles */
+    gap: var(--spacing-lg);
+  }
+  .reviewCard {
+    max-width: 380px; /* Limit width of stacked cards */
+    margin: 0 auto;
+  }
+  .reviewText {
+    -webkit-line-clamp: 4; /* Adjust lines for smaller screens */
+  }
+  .statsContainer {
+    flex-direction: column; /* Stack stats vertically */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+  }
+  .statItem {
+    width: 100%; /* Full width when stacked */
+    align-items: center; /* Center content */
+  }
+  .statIcon {
+    font-size: var(--font-size-xxl);
+  }
+  .statValue {
+    font-size: var(--font-size-xxl);
+  }
+  .statLabel {
+    font-size: var(--font-size-sm);
+  }
+  .paymentIconsContainer {
+    padding-top: var(--spacing-xl);
+  }
+  .paymentIconsContainer h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
+  }
+  .paymentIcon {
+    height: 25px;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .trustSection {
+    padding: var(--spacing-xxl) var(--spacing-sm);
+  }
+  .title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+  }
+  .subtitle {
+    font-size: var(--font-size-xs);
+  }
+  .reviewCard {
+    padding: var(--spacing-md);
+  }
+  .statValue {
+    font-size: var(--font-size-xl);
+  }
+  .statLabel {
+    font-size: var(--font-size-xs);
+  }
+  .paymentIcons {
+    gap: var(--spacing-md);
+  }
+  .paymentIcon {
+    height: 20px;
+  }
+}
