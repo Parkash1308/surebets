@@ -1,3 +1,5 @@
+/* src/components/layout/Footer/Footer.module.css */
+
 .footer {
   background-color: var(--color-light-gray); /* Light Gray background */
   color: var(--color-text-dark);
@@ -34,13 +36,18 @@
 
 .footerNav {
   display: flex;
+  /* Changed justify-content to flex-start to allow columns to group from left */
+  justify-content: flex-start;
   gap: var(--spacing-xl);
   flex-wrap: wrap; /* Allow columns to wrap */
   flex-grow: 1; /* Allow nav section to grow */
-  justify-content: space-around; /* Distribute columns */
+  /* Remove justify-content: space-around here, let flex-wrap and individual flex-basis handle it */
 }
 
 .navColumn {
+  /* Give each column a flexible basis to encourage grouping */
+  flex: 1 1 150px; /* Each column tries to be 150px, but can grow/shrink */
+  min-width: 120px; /* Minimum width to prevent content squishing */
   margin-bottom: var(--spacing-lg); /* Space when stacked */
 }
 
@@ -106,16 +113,53 @@
 }
 
 /* Responsive adjustments for Footer */
+@media (max-width: 992px) { /* New breakpoint for better tablet layout */
+  .footerContent {
+    justify-content: center; /* Center overall content */
+    gap: var(--spacing-lg);
+  }
+  .footerBrand {
+    flex-basis: auto; /* Allow brand to shrink/grow */
+    width: 100%; /* Take full width on this breakpoint */
+    text-align: center;
+    margin-bottom: var(--spacing-xl); /* More space below brand when centered */
+  }
+  .footerNav {
+    justify-content: center; /* Center nav columns */
+    gap: var(--spacing-lg); /* Adjust gap for tablet layout */
+    flex-basis: 100%; /* Ensure nav takes full width for its internal layout */
+  }
+  .navColumn {
+    flex: 1 1 calc(50% - var(--spacing-lg) / 2); /* Two columns per row */
+    max-width: calc(50% - var(--spacing-lg) / 2); /* Prevent them from getting too wide */
+    text-align: left; /* Keep text left-aligned within columns */
+  }
+  .footerPaymentIcons {
+    flex-basis: 100%; /* Take full width */
+    text-align: center;
+    margin-top: var(--spacing-lg); /* Add space above payment icons */
+  }
+  .paymentIcons {
+    justify-content: center; /* Center payment icons */
+  }
+}
+
 @media (max-width: 768px) {
   .footerContent {
-    flex-direction: column;
+    flex-direction: column; /* Stack all major sections */
     align-items: center;
     text-align: center;
   }
   .footerNav {
-    flex-direction: column;
+    flex-direction: column; /* Stack nav columns */
     align-items: center;
     gap: var(--spacing-lg); /* Space between stacked columns */
+  }
+  .navColumn {
+    flex: 1 1 100%; /* Each nav column takes full width */
+    max-width: 250px; /* Limit max width of stacked columns for readability */
+    text-align: center; /* Center text when stacked */
+    margin-bottom: var(--spacing-md); /* Smaller margin when fully stacked */
   }
   .navColumn ul {
     text-align: center;
